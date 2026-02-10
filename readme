@@ -1,0 +1,126 @@
+User Management API
+
+Project Highlights
+
+Lightweight Minimal API built with ASP.NET Core (.NET 8)
+
+Full CRUD functionality: create, read, update, delete users
+
+Validation and error handling for robust API behavior
+
+Middleware support for logging requests/responses and authentication
+
+Auto-generated unique IDs for users
+
+Perfect for learning modern backend practices or as a foundation for larger applications
+
+Overview
+
+The User Management API allows you to manage users efficiently with a clean, modern API design. It enforces validation, handles errors gracefully, and includes middleware for logging and security. Designed to be lightweight, easy to use, and extendable.
+
+Features
+
+CRUD Operations
+
+Create users (POST)
+
+Get all users (GET)
+
+Get user by ID (GET)
+
+Update user by ID (PUT)
+
+Delete user by ID (DELETE)
+
+Validation
+
+Usernames cannot be empty
+
+Age must be positive
+
+Middleware
+
+Request/response logging
+
+Consistent JSON error messages
+
+Optional token-based authentication
+
+In-memory storage
+
+Auto-generated unique IDs
+
+Technologies Used
+
+.NET 8
+
+ASP.NET Core Minimal APIs
+
+C#
+
+Middleware (logging, error handling, authentication)
+
+In-memory collections
+
+Getting Started
+Prerequisites
+
+.NET 8 SDK
+
+Visual Studio 2022 or VS Code
+
+Run the API
+
+Clone the repository:
+git clone https://github.com/your-username/user-management-api.git
+
+Navigate to the project directory:
+cd user-management-api
+
+Run the project:
+dotnet run
+
+API will be available at:
+http://localhost:5062
+
+API Endpoints
+Method	Endpoint	Description
+GET	/	Default endpoint to check API status
+POST	/users/create	Create a new user
+GET	/users/get	Retrieve all users
+GET	/users/get/{id}	Retrieve a user by ID
+PUT	/users/{id}	Update a user by ID
+DELETE	/users/{id}	Delete a user by ID
+Request Examples
+
+Create a User
+POST http://localhost:5062/users/create
+Body:
+{ "UserName": "Charlie", "Age": 28 }
+
+Update a User
+PUT http://localhost:5062/users/3
+Body:
+{ "UserName": "Bob Updated", "Age": 42 }
+
+Get All Users
+GET http://localhost:5062/users/get
+
+Delete a User
+DELETE http://localhost:5062/users/1
+
+Middleware
+
+Logging: Logs HTTP method, request path, and response status
+
+Error Handling: Returns consistent JSON error messages for exceptions
+
+Authentication (optional): Validates tokens for secure endpoints
+
+Contributing
+
+Contributions are welcome! Fork the repository, create a branch, and submit a pull request.
+
+License
+
+MIT License

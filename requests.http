@@ -1,0 +1,77 @@
+@baseUrl = http://localhost:5062
+@token = Bearer my-secret-token
+@badToken = Bearer wrong-token
+
+### 1 Check default endpoint (no token)
+GET {{baseUrl}}/
+
+###
+
+### 2 Create user
+POST {{baseUrl}}/users/create
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  "UserName": "Charlie",
+  "Age": 28
+}
+
+###
+
+### 3 Get all users
+GET {{baseUrl}}/users/get
+Authorization: {{token}}
+
+###
+
+### 4 Get user by ID 2
+GET {{baseUrl}}/users/get/2
+Authorization: {{token}}
+
+###
+
+### 5 Update user ID 3
+PUT {{baseUrl}}/users/3
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  "UserName": "Bob Updated",
+  "Age": 42
+}
+
+###
+
+### 6 Delete user ID 1
+DELETE {{baseUrl}}/users/1
+Authorization: {{token}}
+
+###
+
+### 7 Get all users (final state)
+GET {{baseUrl}}/users/get
+Authorization: {{token}}
+
+###
+
+### 8 Missing token (401)
+GET {{baseUrl}}/users/get
+
+###
+
+### 9 Invalid token (401)
+GET {{baseUrl}}/users/get
+Authorization: {{badToken}}
+
+###
+
+### 10 Invalid user validation
+POST {{baseUrl}}/users/create
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+  "UserName": "",
+  "Age": -1
+}
