@@ -72,7 +72,7 @@ Visual Studio 2022 or VS Code
 Run the API
 
 Clone the repository:
-git clone https://github.com/your-username/user-management-api.git
+git clone https://github.com/realsaleemahmed/user-management-api.git
 
 Navigate to the project directory:
 cd user-management-api
